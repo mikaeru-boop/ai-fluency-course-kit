@@ -1,0 +1,11 @@
+# learner state, never ships
+progress.md
+workspace/*
+!workspace/README.md
+.claude/settings.local.json
+
+# author's planning documents, not part of the kit
+planning/
+
+# os noise
+.DS_Store

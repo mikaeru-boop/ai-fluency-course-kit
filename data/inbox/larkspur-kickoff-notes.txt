@@ -1,0 +1,22 @@
+larkspur kickoff call - tuesday - notes (sorry these are rough, typed on phone)
+
+on call: me, Dana (larkspur logistics dir), Marcus (larkspur IT), Priya (their PM), T. from our side
+
+q3 manifest = 200 shipments, they want the on-time push before oct (holiday season)
+Dana: priority is the WA + OR lanes, thats where their retail partners are
+they will send q4 volume "around 250 shipments" first week of oct - marcus sending via EDI as usual
+IMPORTANT dana said their leadership reviews ops numbers every monday morning -> our
+weekly status needs to land BEFORE that, so friday end of day at latest
+
+focus this qtr: exception rate and on-time delivery, Dana says damage claims "historically ugly"
+priya asked if we can flag shipments w/ 3+ open issues for proactive calls - said yes
+marcus: dont use the old FTP drop from 2025!! new EDI creds coming
+someone asked about the two receiving warehouses w/ spanish speaking crews - need spanish-first delivery notifications
+
+action items (i think):
+- us: priority lane list WA/OR ✓ flag 3+ issues
+- us: weekly status by friday EOD
+- them: q4 manifest early oct, new EDI creds (marcus)
+- them: confirm notification language requirements (priya, next week)
+
+next call oct 8, 2pm PT

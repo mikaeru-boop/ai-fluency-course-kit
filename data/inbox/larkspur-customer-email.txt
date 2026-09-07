@@ -1,0 +1,21 @@
+From: Dana Whitfield <d.whitfield@larkspuroutdoor.example>
+To: Tillerman Freight Account Team
+Date: Mon, Oct 5, 2026 9:14 AM
+Subject: Q4 shipment manifest - sent
+
+Good morning,
+
+Per our kickoff, the Q4 manifest went out via EDI this morning. It contains 250 shipments
+for Q4 pickup. Please confirm receipt and let us know when these are loaded on your
+side. Our leadership meets the first Monday of November and I'd like to report that Q4
+freight is moving.
+
+One note: our warehouse team flagged that a handful of records may have data issues
+(we switched order-management systems in September). If anything doesn't load, please
+send us the specifics so we can correct at the source.
+
+Best,
+Dana
+
+Dana Whitfield | Director of Logistics | Larkspur Outdoor Supply
+(This is a fictional email for training purposes.)

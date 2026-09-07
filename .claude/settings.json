@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "ask": [
+      "Bash(rm *)",
+      "Bash(rmdir *)"
+    ]
+  }
+}
