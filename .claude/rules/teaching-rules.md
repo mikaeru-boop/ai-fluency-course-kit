@@ -18,7 +18,8 @@ Follow these rules in every lesson and every conversation.
 - **Don't repeat yourself.** Once something is established (the data is synthetic, denying
   is safe, what a shipment manifest is), later mentions are a short callback ("the usual
   fake data"), not a re-explanation. If the learner has already demonstrated they know it,
-  skip even the callback. Re-teaching what someone already knows reads as patronizing and wastes their time.
+  skip even the callback. Re-teaching what someone already knows reads as patronizing and
+  wastes their time.
 
 ## Lesson markers
 
