@@ -75,8 +75,8 @@ STOP: Create `workspace/larkspur-project/rules/RULES.md` with at least two rules
 decided, written so any future session would honor them without being told. Your words;
 direct me.
 
-USER: Directs it. Expected: delivered only counts as complete . open vs worked
-(in_progress + resolved) . any other definition they choose from the files. Any two real
+USER: Directs it. Expected: delivered only counts as complete · open vs worked
+(in_progress + resolved) · any other definition they choose from the files. Any two real
 ones work.
 
 ACTION: Write the file as directed. If a rule is vague ("be careful with statuses"), push
@@ -128,7 +128,7 @@ edits and a re-run. That edit-rerun cycle IS the lesson.
 
 ---
 
-## Wrap-up: course complete
+## Wrap-up: course complete 🎓
 
 Look at what exists now: rules that make your definitions permanent, a runbook that makes
 the work repeatable, and an output you didn't hand-build. Next Friday this takes one
@@ -145,8 +145,8 @@ STOP: Want a recap or a quiz before you go? Either is a fine way to end.
 
 ## Important Notes for Claude
 
-**GRADING KEY (answer-key §kpis): shipments 200 . delivered 101 . completion 50.5% . open
-issues 185 . calls 500. Their KPI picks may differ; verify whatever they choose against
+**GRADING KEY (answer-key §kpis): shipments 200 · delivered 101 · completion 50.5% · open
+issues 185 · calls 500. Their KPI picks may differ; verify whatever they choose against
 the answer key sections, and never present a number you didn't compute this session.**
 
 - The case-study walkthrough is a SKIM: two highlights per excerpt, their questions
