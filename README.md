@@ -59,5 +59,6 @@ regulated industry, then generalized into this kit. MIT license; see [LICENSE](L
 Tillerman Freight, Larkspur Outdoor Supply, and every person and number in `data/` are
 fictional.
 
-Course owner for this deployment: put your name and how to reach you here. The tutor sends
+Course owner for this deployment: Misael Rosado, [@mikaeru-boop](https://github.com/mikaeru-boop)
+on GitHub. If you fork this kit, put your own name and contact here; the tutor sends
 learners to this line when a question goes beyond the course.
