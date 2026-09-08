@@ -26,7 +26,7 @@ One script generates every file and the answer key from the same rows, with a fi
 so a run today matches a run next year. `--check` re-derives everything and diffs it
 against disk; run it before every release. Make fake data obvious at a glance: IDs that
 start with 99, surnames from the NATO alphabet, 555 phone numbers, streets named "Example
-Ave". Every number a lesson expects comes from the generated key, never from a person's
+Ave", "Sample St", or "Placeholder Rd". Every number a lesson expects comes from the generated key, never from a person's
 memory. See `tools/make_synthetic_data.py`; its docstring says which parts to change.
 
 ## 4. Lessons

@@ -5,7 +5,8 @@
 customer, shipment, or employee data appears here, and none may ever be added.**
 
 You can tell the data is fake at a glance: shipment IDs start with 99, consignee surnames
-are the NATO alphabet, phones are 555-01xx, and streets are named "Example Ave."
+are the NATO alphabet, phones are 555-01xx, and streets are named "Example Ave", "Sample
+St", or "Placeholder Rd".
 
 ## Files
 
@@ -15,7 +16,7 @@ are the NATO alphabet, phones are 555-01xx, and streets are named "Example Ave."
 | `larkspur_service_issues.csv` | Service issues on those shipments. `status`: `open` (nobody has acted), `in_progress` (being worked, not confirmed), `resolved` (confirmed closed). |
 | `larkspur_delivery_events.csv` | The latest delivery event per shipment. **Only `status = delivered` counts as a completed shipment.** |
 | `larkspur_carrier_calls.csv` | Calls our dispatch team made to consignees, with dispositions. |
-| `larkspur_shipments_2026Q4_raw.csv` | The Q4 manifest exactly as the customer sent it, problems included. Used in the data-quality lesson. |
+| `larkspur_shipments_2026Q4_raw.csv` | The Q4 manifest exactly as the customer sent it, problems included. The full course's data-quality lesson uses it; no lesson in this demo does. |
 | `larkspur_load_log.csv` | What our loader did with each Q4 row (loaded or rejected, with the reason). |
 | `inbox/` | Messy human inputs (kickoff notes, a customer email) used in exercises. |
 

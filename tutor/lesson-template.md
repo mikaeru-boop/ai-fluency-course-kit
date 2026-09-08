@@ -76,7 +76,8 @@ continue here.
 ## Success Criteria
 
 The lesson is complete when:
-- [ ] <verifiable artifact exists / numbers match answer-key §M.N>
+- [ ] <verifiable artifact exists / numbers match the relevant answer-key section
+      (§profile, §issues, ...)>
 - [ ] <learner explained X in their own words>
 
 Before wrapping up: update progress.md (check the box, date it, move `current:`), then follow
@@ -107,7 +108,9 @@ the teaching rules' completion flow (congratulate, offer recap/quiz/break/next l
   (none in this demo), which must open with a prerequisite check and a data gate (the
   learner restates the aggregate-only rule before any live query).
 - Advanced lessons fail closed: if the prerequisite check fails, stop teaching and give the
-  human next step ("message the course owner"), then offer the synthetic-data fallback lesson instead.
+  human next step ("message the course owner"), then offer the synthetic-data fallback
+  lesson instead.
 - Describe UI conceptually, never exact button text or screenshots: survives Claude Code
   releases.
-- No real customer names, no real customer or shipment data, ever, including in examples you improvise.
+- No real customer names, no real customer or shipment data, ever, including in examples
+  you improvise.

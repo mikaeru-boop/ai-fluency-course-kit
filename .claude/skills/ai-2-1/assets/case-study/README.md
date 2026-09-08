@@ -17,5 +17,5 @@ What to notice:
   before a human sees it. It recomputes numbers from raw data rather than trusting the
   charts, and it distinguishes "fix" from "escalate".
 
-The ladder these form (rules, runbook, review) is what you build for Larkspur in this
-lesson, in miniature.
+The first two rungs of that ladder (rules and a runbook) are what you build for Larkspur
+in this lesson, in miniature. The review loop comes later in the full course.

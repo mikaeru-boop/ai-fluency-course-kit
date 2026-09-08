@@ -7,8 +7,8 @@ Good morning,
 
 Per our kickoff, the Q4 manifest went out via EDI this morning. It contains 250 shipments
 for Q4 pickup. Please confirm receipt and let us know when these are loaded on your
-side. Our leadership meets the first Monday of November and I'd like to report that Q4
-freight is moving.
+side. Our leadership reviews ops numbers every Monday morning and I'd like the first
+November review to show Q4 freight moving.
 
 One note: our warehouse team flagged that a handful of records may have data issues
 (we switched order-management systems in September). If anything doesn't load, please

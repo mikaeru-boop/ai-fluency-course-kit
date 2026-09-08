@@ -6,6 +6,7 @@ workspace/*
 
 # author's planning documents, not part of the kit
 planning/
+.superpowers/
 
 # os noise
 .DS_Store

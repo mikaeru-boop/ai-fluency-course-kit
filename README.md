@@ -35,13 +35,14 @@ by one script.
 
 ## Run it
 
-1. Install Claude Code (the desktop app is enough).
+1. Install Claude Code (desktop app or command line, either works).
 2. Download or clone this repository.
-3. Open Claude Code, choose Open folder, pick `ai-fluency-course-kit`.
+3. Open the `ai-fluency-course-kit` folder in Claude Code: in the desktop app, open it as
+   the project folder; in a terminal, change into it and start `claude`.
 4. Type `start` and press enter.
 
-The tutor writes only inside `workspace/` and `progress.md`. Nothing else on your computer
-is touched.
+The tutor is instructed to write only inside `workspace/` and `progress.md`, and Claude
+Code asks your permission before it changes anything.
 
 ## How a course gets customized
 
@@ -57,3 +58,6 @@ Built by Misael Rosado. The method was first built and piloted for an operations
 regulated industry, then generalized into this kit. MIT license; see [LICENSE](LICENSE).
 Tillerman Freight, Larkspur Outdoor Supply, and every person and number in `data/` are
 fictional.
+
+Course owner for this deployment: put your name and how to reach you here. The tutor sends
+learners to this line when a question goes beyond the course.

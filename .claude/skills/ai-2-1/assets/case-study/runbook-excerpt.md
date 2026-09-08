@@ -15,6 +15,8 @@ describe what broke.* No third attempts, no improvising.
 - **GATE ON THE MANIFEST, NOT THE FILESYSTEM**: use an extract's CSV only if its manifest
   entry says `ok: true`. A failed extract can leave a partial CSV on disk that *looks* fine.
 
+## 1. Refresh the data pull (elided)
+
 ## 2. Inject data constants (numbers only, never touch layout)
 
 HARD RULES (added after the first dry run improvised):

@@ -1,7 +1,7 @@
 ---
 name: ai-0-1
 description: |
-  Lesson 0.1: Meet Claude Code & hold the leash. Use when the learner types /ai-0-1.
+  Lesson 0.1: Meet Claude Code and hold the leash. Use when the learner types /ai-0-1.
 disable-model-invocation: true
 allowed-tools:
   - Read
@@ -26,13 +26,13 @@ Lesson metadata:
 - data: []
 - produces: ["workspace/hello.md"]
 
-# Lesson 0.1: Meet Claude Code & hold the leash
+# Lesson 0.1: Meet Claude Code and hold the leash
 
 **Welcome to AI Fluency @ Tillerman Freight! 🎉**
 
-This course takes about two hours, in short lessons, and you can stop anytime; I keep
-track of where you are. No coding, no technical background needed: if you can describe
-what you want in a Slack message, you can do everything here.
+This course is three short lessons, about fifty minutes in all, and you can stop anytime;
+I keep track of where you are. No coding, no technical background needed: if you can
+describe what you want in a chat message, you can do everything here.
 
 You may have used Claude before, on the web or in the desktop chat. Those versions *talk*.
 Claude Code is Claude working **inside a folder on your computer**: it can read files,
@@ -60,7 +60,7 @@ the spreadsheet a customer sends saying "here is what we need moved this quarter
 everything our operations team does starts with one.
 
 Larkspur is *completely fictional*. Every shipment and spreadsheet was generated for
-training, and it's obvious at a glance (consignees named "Maria Tango", 555 phone
+training, and it's obvious at a glance (consignees named "Maria Foxtrot", 555 phone
 numbers). That's deliberate: realistic work, zero risk. One rule comes with it, and it's
 the only lecture you'll get: **real customer and shipment data never comes into this
 course.** We handle customer data under contract. Practice happens on fake data; real
@@ -121,13 +121,17 @@ your place in the course lives in [progress.md](progress.md): quit anytime, reop
 folder, say hi, and I'll know exactly where you were. The worst case in this entire course
 is redoing a ten-minute exercise.
 
+One habit to start today, and it's the same one you'd apply to a new coworker: when I hand
+you a number or a fact, ask where it came from. I can read a file wrong or fill a gap with a
+guess. Verify before you rely; every lesson from here gives you a chance to practice it.
+
 ---
 
 ## Wrap-up: Module 0 complete 🎓
 
 You've directed an AI with hands, refused it, and met the three working rules that make it
-safe here: **no real customer data**, **verify before you rely** (you'll practice it in every lesson), and
-**you hold the approve/deny leash**.
+safe here: **no real customer data**, **verify before you rely**, and **you hold the
+approve/deny leash**.
 
 **Next up:** 1.1, putting me to work for real: messy notes in, a deliverable out.
 

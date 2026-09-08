@@ -96,8 +96,8 @@ say what made it tight and name the other two traps in one clause each.
 The refinement you just asked for (more structure, shorter, headers, whatever it was) is a
 preference. You shouldn't have to say it every time.
 
-Ever notice you've never had to remind me what a shipment manifest is, or that this course writes only
-in your workspace? That's not talent; it's a file.
+Ever notice you've never had to remind me what a shipment manifest is, or that this course
+writes only in your workspace? That's not talent; it's a file.
 
 ACTION: Read [CLAUDE.md](CLAUDE.md) and summarize in two sentences what it does: a
 plain-text file of standing instructions, read at the start of every session in this

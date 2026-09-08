@@ -7,7 +7,7 @@ not exist. Conventions that make the data obviously fake at a glance:
   - Larkspur references are LKS-000001+
   - Consignee surnames come from the NATO alphabet ("Harold Foxtrot")
   - Phones use the reserved 555-01xx range
-  - Street addresses are "<n> Example Ave/Blvd/Ln"
+  - Street addresses are "<n> Example Ave/Blvd/Ln", "Sample St", or "Placeholder Rd"
   - Email domains end in .example
 
 Usage:
@@ -331,7 +331,8 @@ DATA_README = f"""# {CUSTOMER}: synthetic practice data
 customer, shipment, or employee data appears here, and none may ever be added.**
 
 You can tell the data is fake at a glance: shipment IDs start with 99, consignee surnames
-are the NATO alphabet, phones are 555-01xx, and streets are named "Example Ave."
+are the NATO alphabet, phones are 555-01xx, and streets are named "Example Ave", "Sample
+St", or "Placeholder Rd".
 
 ## Files
 
@@ -341,7 +342,7 @@ are the NATO alphabet, phones are 555-01xx, and streets are named "Example Ave."
 | `larkspur_service_issues.csv` | Service issues on those shipments. `status`: `open` (nobody has acted), `in_progress` (being worked, not confirmed), `resolved` (confirmed closed). |
 | `larkspur_delivery_events.csv` | The latest delivery event per shipment. **Only `status = delivered` counts as a completed shipment.** |
 | `larkspur_carrier_calls.csv` | Calls our dispatch team made to consignees, with dispositions. |
-| `larkspur_shipments_2026Q4_raw.csv` | The Q4 manifest exactly as the customer sent it, problems included. Used in the data-quality lesson. |
+| `larkspur_shipments_2026Q4_raw.csv` | The Q4 manifest exactly as the customer sent it, problems included. The full course's data-quality lesson uses it; no lesson in this demo does. |
 | `larkspur_load_log.csv` | What our loader did with each Q4 row (loaded or rejected, with the reason). |
 | `inbox/` | Messy human inputs (kickoff notes, a customer email) used in exercises. |
 
@@ -377,6 +378,8 @@ action items (i think):
 - them: confirm notification language requirements (priya, next week)
 
 next call oct 8, 2pm PT
+
+(fictional notes written for training)
 """
 
 CUSTOMER_EMAIL = """From: Dana Whitfield <d.whitfield@larkspuroutdoor.example>
@@ -388,8 +391,8 @@ Good morning,
 
 Per our kickoff, the Q4 manifest went out via EDI this morning. It contains 250 shipments
 for Q4 pickup. Please confirm receipt and let us know when these are loaded on your
-side. Our leadership meets the first Monday of November and I'd like to report that Q4
-freight is moving.
+side. Our leadership reviews ops numbers every Monday morning and I'd like the first
+November review to show Q4 freight moving.
 
 One note: our warehouse team flagged that a handful of records may have data issues
 (we switched order-management systems in September). If anything doesn't load, please
@@ -441,6 +444,7 @@ def main():
         print(f"OK: all {len(files)} generated files match disk (seed {SEED}).")
         return
     INBOX.mkdir(parents=True, exist_ok=True)
+    ANSWER_KEY.parent.mkdir(parents=True, exist_ok=True)
     for path, content in files.items():
         path.write_text(content)
         print(f"wrote {path.relative_to(ROOT)}")

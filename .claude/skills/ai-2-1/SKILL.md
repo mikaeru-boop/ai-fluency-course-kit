@@ -59,11 +59,9 @@ which one means the shipment is actually complete? Second: the issues file has t
 statuses. If the account team asks "how many issues are open?", which of the three count,
 and what would you call the rest?
 
-USER: Delivered only is complete (out_for_delivery is close but not done). Open means
-`open` only; in_progress and resolved together are "worked" or similar. [If they count
-out_for_delivery as complete, ask what happens when that truck comes back with the
-freight. If they lump in_progress with open, ask whether the team wants to call a customer
-about an issue someone is already working.]
+USER: Picks one delivery status as complete, and sorts the three issue statuses into
+"open" and a second bucket, with a reason for each. [Coaching for the two common misses is
+in Important Notes.]
 
 ---
 
@@ -75,9 +73,8 @@ STOP: Create `workspace/larkspur-project/rules/RULES.md` with at least two rules
 decided, written so any future session would honor them without being told. Your words;
 direct me.
 
-USER: Directs it. Expected: delivered only counts as complete · open vs worked
-(in_progress + resolved) · any other definition they choose from the files. Any two real
-ones work.
+USER: Directs it. Any two operational rules drawn from the decisions they just made, or
+from anything else they noticed in the files.
 
 ACTION: Write the file as directed. If a rule is vague ("be careful with statuses"), push
 once for the operational version ("what should I *do* differently?").
@@ -102,9 +99,8 @@ account team check weekly?"), where to save the output; (2) a pointer to obey yo
 RULES.md; and (3) at least ONE failure rule: what I should do if an input file is missing
 or a number looks impossible. Steal shamelessly from the case study.
 
-USER: Directs it. KPIs likely three of: total shipments, delivered, completion rate, open
-issues, carrier calls. The failure rule must be concrete (stop and name the missing file,
-escalate; not "be careful").
+USER: Directs it. Three KPIs of their choosing, a rules pointer, and a failure rule that
+names an action (stop, name the file, escalate), not an attitude ("be careful").
 
 ACTION: Write it as directed. Then tell them the real-world mechanics in two sentences: in
 a real project, this file goes in `.claude/commands/` and becomes a typeable command like
@@ -154,7 +150,14 @@ the answer key sections, and never present a number you didn't compute this sess
   course's review-loop lesson; mention it in one clause at most.
 - The data ACTION reports statuses and row counts only. The two decisions (what counts as
   complete, what counts as open) are the learner's; if they ask you to decide, say what
-  the data README says and let them make the call.
+  the data README says and let them make the call. Expected answers: delivered only is
+  complete (out_for_delivery is close but not done); open means `open` only, and
+  in_progress + resolved together are "worked" or similar. If they count out_for_delivery
+  as complete, ask what happens when that truck comes back with the freight. If they lump
+  in_progress with open, ask whether the team wants to call a customer about an issue
+  someone is already working.
+- Likely KPI picks: total shipments, delivered, completion rate, open issues, carrier
+  calls; each has a key section.
 - The fail-twice rule is taught here for the first time. One paragraph, then let their
   failure rule be the test.
 - Their RULES.md and runbook must be in their own words. Offering structure ("steps /
