@@ -67,15 +67,12 @@ Then run the smoke test in `MAINTENANCE.md`: fresh folder, no progress file, a n
 roleplay, eight checks. A scripted pass is cheap: copy the packaged folder to a scratch
 directory and drive lessons with `claude -p` in a loop, reading the transcript afterward.
 It never shows a permission prompt, so the prompt check always needs one interactive run.
-The first deployment's pilots found three defects that became rules: the tutor copied last
-session's date forward into new files, it narrated its own setup ("let me kick off the
-lesson"), and a learner's date-format preference leaked into the course's bookkeeping.
-Each fix is one sentence in teaching-rules.md.
+Turn each defect a pilot finds into one sentence in teaching-rules.md, so the fix holds for
+every lesson.
 
 ## 7. Trim and release
 
 After the pilot, review every lesson for redundancy: concepts taught twice, stops spent on
 mechanics the learner already knows, verbal quizzes that a later artifact tests anyway.
-The first deployment went from 11 lessons to 8 and from 41 stops to 24 this way, with no
-loss of coverage. Bump `course_version` in CLAUDE.md, tag the release, and ship either a
-git clone or a zip with the learner state removed (see "Packaging" in MAINTENANCE.md).
+Bump `course_version` in CLAUDE.md, tag the release, and ship either a git clone or a zip
+with the learner state removed (see "Packaging" in MAINTENANCE.md).

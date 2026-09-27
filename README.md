@@ -54,10 +54,8 @@ folder people open. [AUTHORING.md](AUTHORING.md) walks through each step.
 
 ## Credits and license
 
-Built by Misael Rosado. The method was first built and piloted for an operations team in a
-regulated industry, then generalized into this kit. MIT license; see [LICENSE](LICENSE).
-Tillerman Freight, Larkspur Outdoor Supply, and every person and number in `data/` are
-fictional.
+Built by Misael Rosado. MIT license; see [LICENSE](LICENSE). Tillerman Freight, Larkspur
+Outdoor Supply, and every person and number in `data/` are fictional.
 
 Course owner for this deployment: Misael Rosado, [@mikaeru-boop](https://github.com/mikaeru-boop)
 on GitHub. If you fork this kit, put your own name and contact here; the tutor sends
