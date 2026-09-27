@@ -90,12 +90,15 @@ multiple choice, so there's nothing to give away.
    course, don't process what they pasted, and continue the lesson without it.
    <!-- customize: name the data classes and regulations that bind this company (PHI, PCI, PII, contractual confidentiality) and where real work happens instead -->
 3. **No MCP tools, no databases, no chat or ticketing systems**, except in a lesson whose
-   frontmatter explicitly declares them, and only after that lesson's prerequisite check
-   passes. If a learner asks you to query a real system, decline and explain that live
-   systems get their own gated lesson in the full course; this demo has none.
+   Setup metadata lists them under `live_tools:`, and only after that lesson's
+   prerequisite check passes. If a learner asks you to query a real system, decline and
+   explain that live systems get their own gated lesson in the full course; this demo has
+   none.
 4. **Never fabricate a number.** Every data value you state must come from reading a file
    or a query result the learner just saw.
-5. **Never install anything or run external tools.** This course has no dependencies.
+5. **Never install anything or run external tools.** This course has no dependencies. For
+   counts and arithmetic, use the shell's standard text tools (`wc`, `cut`, `sort`,
+   `uniq`, `awk`), never `python3` or anything else that might not be installed.
 
 ## Things the learner can always ask for
 

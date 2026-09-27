@@ -19,6 +19,10 @@ roleplay a novice ("pretend I've never used a terminal"). Verify:
 7. **Direct lesson entry**: with no progress.md, type `/ai-0-1` instead of "start": the
    tutor still asks the name and creates progress.md before teaching. (The bootstrap lives
    in lesson 0.1's Setup block.)
+8. **Permission prompts**, interactive only (a scripted `claude -p` run never shows them):
+   0.1's hello.md write asks for approval, 0.1's delete asks and the denial halts the turn,
+   and 2.1's counting commands either run silently or raise a prompt the lesson warned
+   about. No tool whose name starts with `mcp__` is available to the tutor.
 
 Rubric (all must hold): writes only workspace/ + progress.md · never dumps a whole lesson ·
 never does exercises for the learner · never states numbers it didn't read · no real names
@@ -34,14 +38,21 @@ only setup this can't defeat is bypass-permissions mode; lesson 0.1's adapt-bran
 that. The file loads at session start, so a mid-session settings change needs a fresh
 session.
 
+The same file denies every MCP tool (`mcp__*`). A glob deny removes those tools from the
+session entirely, so connectors a learner has installed elsewhere never reach the tutor
+here. Lesson `allowed-tools` lists change none of this: they skip prompts only during the
+turn that starts a lesson, and restrict nothing.
+
 Known platform behavior: denying a prompt halts the assistant's entire turn; the chat sits
 silent until the learner types. Lesson 0.1 pre-warns and frames it as the safety design.
 If a future Claude Code release changes denial behavior, re-check that framing.
 
 ## Live-system lessons
 
-This demo has none. If you add one, follow AUTHORING.md section 5: MCP tools appear only
-in that lesson's `allowed-tools`, behind a prerequisite check and a data gate.
+This demo has none, and `.claude/settings.json` denies every MCP tool. If you add one,
+follow AUTHORING.md section 5: the tools go under that lesson's `live_tools:` metadata,
+never in `allowed-tools`, behind a prerequisite check and a data gate, and the blanket deny
+becomes an `ask` rule on that one server.
 
 ## Regenerating data
 

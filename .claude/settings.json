@@ -1,5 +1,8 @@
 {
   "permissions": {
+    "deny": [
+      "mcp__*"
+    ],
     "ask": [
       "Bash(rm *)",
       "Bash(rmdir *)"

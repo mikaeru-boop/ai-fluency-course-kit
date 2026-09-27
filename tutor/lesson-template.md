@@ -12,11 +12,10 @@ name: ai-M-N
 description: |
   Lesson M.N: <Title>. Use when the learner types /ai-M-N.
 disable-model-invocation: true
-allowed-tools:
+allowed-tools:   # no prompt for these during the lesson's first turn only; restricts nothing
   - Read
-  - Write        # only if the lesson has the learner produce a workspace artifact
-  - Bash         # only if an ACTION needs it
-  # - mcp__...   # ONLY a live-system lesson (see AUTHORING.md) lists MCP tools. Nothing else, ever.
+  - Write        # only if the lesson's first turn writes (e.g. creating progress.md)
+  # never list MCP tools here; see AUTHORING.md section 5
 ---
 
 ## Setup
@@ -30,6 +29,7 @@ Lesson metadata:
 - advanced: false              # true → run the Prerequisite check section before teaching
 - data: []                     # files in data/ this lesson reads
 - produces: []                 # workspace artifacts the learner will create
+- live_tools: []               # MCP tools; only a live-system lesson has any
 
 # Lesson M.N: <Title>
 
@@ -104,9 +104,12 @@ the teaching rules' completion flow (congratulate, offer recap/quiz/break/next l
 - A verbal "in your own words" checkpoint only when no later lesson tests the concept
   operationally. If a later artifact would reveal whether they understood it (a RULES.md
   line, a failure rule, a done-criteria list), let the artifact be the test.
-- `allowed-tools` is the security boundary: MCP tools appear ONLY in a live-system lesson
-  (none in this demo), which must open with a prerequisite check and a data gate (the
-  learner restates the aggregate-only rule before any live query).
+- `allowed-tools` is a convenience, not a boundary: it skips prompts for the listed tools
+  during the turn that starts the lesson and restricts nothing. The boundary is
+  `permissions.deny` in `.claude/settings.json` (this demo denies every MCP tool). MCP
+  tools appear ONLY under `live_tools:` in a live-system lesson (none in this demo), which
+  must open with a prerequisite check and a data gate (the learner restates the
+  aggregate-only rule before any live query).
 - Advanced lessons fail closed: if the prerequisite check fails, stop teaching and give the
   human next step ("message the course owner"), then offer the synthetic-data fallback
   lesson instead.
