@@ -70,6 +70,19 @@ Completion by destination state (delivered / shipments):
 
 - Shipments with an open issue AND not delivered: **64**
 
+## §ontime (shipments x delivery events; on time = delivered on or before promised_date)
+
+- Delivered: **101**
+- On time: **81**; late: **20**
+- On-time rate (on time / delivered): **80.2%**
+- Variant, excluding shipments with any weather_hold issue (the case study's rule): on time **46** of **60** delivered, **76.7%**
+
+## §exceptions (delivery events + service issues; "exception rate" has more than one reading)
+
+- Latest delivery event is `exception`: **24** shipments, **12.0%** of 200 (15.0% of the 160 with an event)
+- Shipments with at least one service issue, any status: **181**, **90.5%** of 200
+- Shipments with at least one open service issue: **129**, **64.5%** of 200
+
 ## §reconciliation (larkspur_shipments_2026Q4_raw.csv + larkspur_load_log.csv)
 
 - Customer email says: **250 shipments sent**

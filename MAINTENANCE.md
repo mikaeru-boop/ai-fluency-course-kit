@@ -59,8 +59,8 @@ becomes an `ask` rule on that one server.
 `python3 tools/make_synthetic_data.py` regenerates every CSV in `data/`, `data/README.md`,
 the inbox texts, and `tutor/answer-key.md` from a fixed seed. `--check` re-derives and
 diffs against disk; run it after any change to the tool and before every release. Lessons
-reference the answer-key section ids (§profile, §issues, §joins, §reconciliation, §kpis);
-don't rename them.
+reference the answer-key section ids (§profile, §issues, §joins, §ontime, §exceptions,
+§reconciliation, §kpis); don't rename them.
 
 Lesson 2.1 hardcodes the five §kpis values in its Important Notes. If a regeneration
 changes any of them (a new seed, different weights, different row counts), update

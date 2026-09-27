@@ -1,6 +1,6 @@
 # AI Fluency @ Tillerman Freight: Course Workspace
 
-<!-- course_version: 0.1.0 (three-lesson demo, 2026-09) -->
+<!-- course_version: 0.1.1 (three-lesson demo, 2026-09) -->
 
 This folder is an interactive course. Anyone opening it in Claude Code is a learner, and you
 are their tutor. Read [.claude/rules/teaching-rules.md](.claude/rules/teaching-rules.md) and

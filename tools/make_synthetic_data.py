@@ -121,14 +121,22 @@ def make_issues(rng, shipments):
 
 
 def make_delivery_events(rng, shipments):
-    """160 shipments get exactly one terminal event; 40 have none yet."""
+    """160 shipments get exactly one terminal event; 40 have none yet.
+
+    Most deliveries land on or before the promised date; about one in six runs four days
+    late. The offset is drawn the same way for every event so the RNG stream, and every
+    other number in the answer key, stays fixed.
+    """
     moved = rng.sample(shipments, 160)
     events = []
     for i, s in enumerate(moved, start=1):
         status = rng.choices(
             ["delivered", "out_for_delivery", "exception", "returned"], [0.58, 0.18, 0.14, 0.10]
         )[0]
-        edate = date.fromisoformat(s["promised_date"]) + timedelta(days=rng.randint(-1, 4))
+        offset = rng.randint(-1, 4)
+        if status == "delivered" and offset < 4:
+            offset = min(offset, 0)
+        edate = date.fromisoformat(s["promised_date"]) + timedelta(days=offset)
         events.append({
             "event_id": f"EVT-{700000 + i}",
             "shipment_id": s["shipment_id"],
@@ -242,6 +250,15 @@ def build_answer_key(shipments, issues, events, calls, q4_rows, load_log):
         comp_by_state[st] = (done, tot, round(100 * done / tot, 1))
     open_no_delivery = sorted(set(open_by_shipment) - delivered)
 
+    promised = {s["shipment_id"]: s["promised_date"] for s in shipments}
+    delivered_on = {e["shipment_id"]: e["event_date"] for e in events if e["status"] == "delivered"}
+    on_time = {sid for sid, d in delivered_on.items() if d <= promised[sid]}
+    weather = {i["shipment_id"] for i in issues if i["issue_type"] == "weather_hold"}
+    dry = set(delivered_on) - weather
+    dry_on_time = on_time - weather
+    exception_events = sum(1 for e in events if e["status"] == "exception")
+    any_issue = {i["shipment_id"] for i in issues}
+
     rejects = [l for l in load_log if l["load_status"] == "rejected"]
     reject_reasons = counts(rejects, "reject_reason")
     with_events = {e["shipment_id"] for e in events}
@@ -300,6 +317,19 @@ Completion by destination state (delivered / shipments):
 
 - Shipments with an open issue AND not delivered: **{len(open_no_delivery)}**
 
+## §ontime (shipments x delivery events; on time = delivered on or before promised_date)
+
+- Delivered: **{len(delivered_on)}**
+- On time: **{len(on_time)}**; late: **{len(delivered_on) - len(on_time)}**
+- On-time rate (on time / delivered): **{round(100 * len(on_time) / len(delivered_on), 1)}%**
+- Variant, excluding shipments with any weather_hold issue (the case study's rule): on time **{len(dry_on_time)}** of **{len(dry)}** delivered, **{round(100 * len(dry_on_time) / len(dry), 1)}%**
+
+## §exceptions (delivery events + service issues; "exception rate" has more than one reading)
+
+- Latest delivery event is `exception`: **{exception_events}** shipments, **{round(100 * exception_events / len(shipments), 1)}%** of {len(shipments)} ({round(100 * exception_events / len(events), 1)}% of the {len(events)} with an event)
+- Shipments with at least one service issue, any status: **{len(any_issue)}**, **{round(100 * len(any_issue) / len(shipments), 1)}%** of {len(shipments)}
+- Shipments with at least one open service issue: **{len(open_by_shipment)}**, **{round(100 * len(open_by_shipment) / len(shipments), 1)}%** of {len(shipments)}
+
 ## §reconciliation (larkspur_shipments_2026Q4_raw.csv + larkspur_load_log.csv)
 
 - Customer email says: **250 shipments sent**
@@ -340,7 +370,7 @@ St", or "Placeholder Rd".
 |---|---|
 | `larkspur_shipments_2026Q3.csv` | The Q3 shipment manifest: 200 shipments the customer asked us to move. One row per shipment: IDs, consignee, destination, service level, weight, pickup and promised dates. |
 | `larkspur_service_issues.csv` | Service issues on those shipments. `status`: `open` (nobody has acted), `in_progress` (being worked, not confirmed), `resolved` (confirmed closed). |
-| `larkspur_delivery_events.csv` | The latest delivery event per shipment. **Only `status = delivered` counts as a completed shipment.** |
+| `larkspur_delivery_events.csv` | The latest delivery event per shipment. `status`: `delivered` (freight handed to the consignee), `out_for_delivery` (on the truck for final delivery), `exception` (a delivery attempt hit a problem), `returned` (freight sent back to the shipper). |
 | `larkspur_carrier_calls.csv` | Calls our dispatch team made to consignees, with dispositions. |
 | `larkspur_shipments_2026Q4_raw.csv` | The Q4 manifest exactly as the customer sent it, problems included. The full course's data-quality lesson uses it; no lesson in this demo does. |
 | `larkspur_load_log.csv` | What our loader did with each Q4 row (loaded or rejected, with the reason). |

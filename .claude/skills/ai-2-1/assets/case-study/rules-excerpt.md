@@ -6,11 +6,12 @@ re-litigated.*
 
 ## Definitions
 
-- **Delivered** = `delivery_events.status = 'delivered'` only. An `out_for_delivery` row
-  is not a delivery, however close it looks.
-- **Open issues** = issue `status = 'open'` only. NEVER use the `has_issue` flag on the
-  shipment table; it stays true after resolution ("had an issue this quarter").
-  In_progress + resolved count together as *worked*.
+- **Shipment week** = the Monday-to-Sunday week of `pickup_date`, never the week the
+  manifest row arrived. A late manifest otherwise lands last week's freight in this week's
+  count (decided 2026-01-12).
+- **Damage count** = claims in the claims table. NEVER use the `damage_flag` on the
+  shipment table; drivers set it at the dock for scuffed packaging, and nobody clears it
+  when no claim follows (added 2026-04-20, after a deck overstated damage by a third).
 - **On-time** = delivered on or before `promised_date`. Weather holds are excluded from the
   on-time denominator (customer agreement, dated 2026-03-12), never from the issue counts.
 - **Active lanes** = the lane table for the current quarter. Do NOT use the legacy

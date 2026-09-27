@@ -14,7 +14,7 @@ St", or "Placeholder Rd".
 |---|---|
 | `larkspur_shipments_2026Q3.csv` | The Q3 shipment manifest: 200 shipments the customer asked us to move. One row per shipment: IDs, consignee, destination, service level, weight, pickup and promised dates. |
 | `larkspur_service_issues.csv` | Service issues on those shipments. `status`: `open` (nobody has acted), `in_progress` (being worked, not confirmed), `resolved` (confirmed closed). |
-| `larkspur_delivery_events.csv` | The latest delivery event per shipment. **Only `status = delivered` counts as a completed shipment.** |
+| `larkspur_delivery_events.csv` | The latest delivery event per shipment. `status`: `delivered` (freight handed to the consignee), `out_for_delivery` (on the truck for final delivery), `exception` (a delivery attempt hit a problem), `returned` (freight sent back to the shipper). |
 | `larkspur_carrier_calls.csv` | Calls our dispatch team made to consignees, with dispositions. |
 | `larkspur_shipments_2026Q4_raw.csv` | The Q4 manifest exactly as the customer sent it, problems included. The full course's data-quality lesson uses it; no lesson in this demo does. |
 | `larkspur_load_log.csv` | What our loader did with each Q4 row (loaded or rejected, with the reason). |
